@@ -1,17 +1,17 @@
-function oddOne(array) {
+function findOdd(A) {
   let obj = {};
-  for (let i = 0; i < array.length; i++) {
-    if (obj[array[i]] === undefined) {
-      obj[array[i]] = 1;
+  for (let i = 0; i < A.length; i++) {
+    if (obj[A[i]] === undefined) {
+      obj[A[i]] = 1;
     } else {
-      obj[array[i]]++;
+      obj[A[i]]++;
     }
   }
   for (let [k, v] of Object.entries(obj)) {
     if (v % 2 === 1) {
-      console.log(k);
+      return k;
     }
   }
 }
-let array = [1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1];
-oddOne(array);
+let A = [1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1];
+console.log(findOdd(A))
